@@ -1,0 +1,30 @@
+<div class="p-4">
+    <h4>{{ title }}</h4>
+    <table>
+        <tr>
+            <td>Id:</td>
+            <td>
+                <input [(ngModel)]="newCredit.id" type="text" />
+            </td>
+        </tr>
+        <tr>
+            <td>Movie Id:</td>
+            <td>
+                <input [(ngModel)]="newCredit.movie" type="text" />
+            </td>
+        </tr>
+        <tr>
+            <td>Actor Id:</td>
+            <td>
+                <input [(ngModel)]="newCredit.actor" type="text" />
+            </td>
+        </tr>
+        <tr>
+            <td>Role:</td>
+            <td>
+                <input [(ngModel)]="newCredit.role" type="text" />
+            </td>
+        </tr>
+    </table>
+    <button (click)="addCredit()">Add Credit</button>
+</div>

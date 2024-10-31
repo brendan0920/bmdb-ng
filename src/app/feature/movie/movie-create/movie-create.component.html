@@ -1,0 +1,36 @@
+<div class="p-4">
+    <h4>{{ title }}</h4>
+    <table>
+        <tr>
+            <td>Id:</td>
+            <td>
+                <input [(ngModel)]="newMovie.id" type="text" />
+            </td>
+        </tr>
+        <tr>
+            <td>Title:</td>
+            <td>
+                <input [(ngModel)]="newMovie.title" type="text" />
+            </td>
+        </tr>
+        <tr>
+            <td>Year:</td>
+            <td>
+                <input [(ngModel)]="newMovie.year" type="text" />
+            </td>
+        </tr>
+        <tr>
+            <td>Rating:</td>
+            <td>
+                <input [(ngModel)]="newMovie.rating" type="text" />
+            </td>
+        </tr>
+        <tr>
+            <td>Director: </td>
+            <td>
+                <input [(ngModel)]="newMovie.director" type="text" />
+            </td>
+        </tr>
+    </table>
+    <button (click)="addMovie()">Add Movie</button>
+</div>
