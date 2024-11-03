@@ -1,7 +1,7 @@
 <div class="p-4">
     <h1>{{ title }}</h1>
     <!-- routerLInk example -->
-    <span class="page-title font-weight-bold font-italic">{{ title }}</span>
+    <span class="page-title font-weight-bold font-italic" style="margin-right: 4px;">{{ title }}</span>
     <a routerLink='/movie-create'>
         <img width='20' height='20' src='assets/add-icon.png' title='Add New'>
     </a>
@@ -15,49 +15,27 @@
             <th>Action</th>
         </thead>
         <tbody>
-            <tr *ngFor="let m of movies; let i = index">
+            <tr *ngFor="let m of movies">
                 <td>{{ m.id }}</td>
                 <td>{{ m.title }}</td>
                 <td>{{ m.year }}</td>
                 <td>{{ m.rating }}</td>
                 <td>{{ m.director }}</td>
-                <td><button (click)="delete(i)" class="btn btn-sm btn-danger">Delete</button></td>
+                <td>
+                    <a routerLink="/movie-detail/{{ m.id }}">
+                        <img src="assets/details.png" width="20" height="20" title="Movie Details"
+                            style="margin-right: 8px;">
+                    </a>
+                    <a routerLink="/movie-list">
+                        <img width="20" height="20" src="assets/delete.jpg" title="Delete Movie" (click)="delete(m.id)"
+                            style="margin-right: 8px;">
+                    </a>
+                    <a routerLink="/movie-edit/{{ m.id }}">
+                        <img width="20" height="20" src="assets/pencil-icon.png" title="Edit Movie"
+                            style="margin-right: 8px;">
+                    </a>
+                </td>
             </tr>
         </tbody>
     </table>
-
-    <!-- <h4>Add A Movie</h4>
-    <table>
-        <tr>
-            <td>Id:</td>
-            <td>
-                <input [(ngModel)]="newMovie.id" type="text" />
-            </td>
-        </tr>
-        <tr>
-            <td>Title:</td>
-            <td>
-                <input [(ngModel)]="newMovie.title" type="text" />
-            </td>
-        </tr>
-        <tr>
-            <td>Year:</td>
-            <td>
-                <input [(ngModel)]="newMovie.year" type="text" />
-            </td>
-        </tr>
-        <tr>
-            <td>Rating:</td>
-            <td>
-                <input [(ngModel)]="newMovie.rating" type="text" />
-            </td>
-        </tr>
-        <tr>
-            <td>Director: </td>
-            <td>
-                <input [(ngModel)]="newMovie.director" type="text" />
-            </td>
-        </tr>
-    </table>
-    <button (click)="addMovie()">Add Movie</button> -->
 </div>

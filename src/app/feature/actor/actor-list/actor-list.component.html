@@ -1,7 +1,7 @@
 <div class="p-4">
     <h1>{{ title }}</h1>
     <!-- routerLInk example -->
-    <span class="page-title font-weight-bold font-italic">{{ title }}</span>
+    <span class="page-title font-weight-bold font-italic" style="margin-right: 4px;">{{ title }}</span>
     <a routerLink='/actor-create'>
         <img width='20' height='20' src='assets/add-icon.png' title='Add New'>
     </a>
@@ -12,15 +12,29 @@
             <th>Last Name</th>
             <th>Gender</th>
             <th>BirthDate</th>
+            <th>Action</th>
         </thead>
         <tbody>
-            <tr *ngFor="let a of actors; let i = index">
+            <tr *ngFor="let a of actors">
                 <td>{{ a.id }}</td>
                 <td>{{ a.firstName }}</td>
                 <td>{{ a.lastName }}</td>
                 <td>{{ a.gender }}</td>
-                <td>{{ a.birthDate }}</td>
-                <td><button (click)="delete(i)" class="btn btn-sm btn-danger">Delete</button></td>
+                <td>{{ a.birthdate }}</td>
+                <td>
+                    <a routerLink="/actor-detail/{{ a.id }}">
+                        <img src="assets/details.png" width="20" height="20" title="Actor Details"
+                            style="margin-right: 8px;">
+                    </a>
+                    <a routerLink="/actor-list">
+                        <img width="20" height="20" src="assets/delete.jpg" title="Delete Actor" (click)="delete(a.id)"
+                            style="margin-right: 8px;">
+                    </a>
+                    <a routerLink="/actor-edit/{{ a.id }}">
+                        <img width="20" height="20" src="assets/pencil-icon.png" title="Edit Actor"
+                            style="margin-right: 8px;">
+                    </a>
+                </td>
             </tr>
         </tbody>
     </table>

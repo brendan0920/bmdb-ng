@@ -15,4 +15,25 @@ export class ActorService {
   list(): Observable<Actor[]> {
     return this.http.get(URL) as Observable<Actor[]>;
   }
+
+  // add(actor: Actor) method
+  add(actor: Actor): Observable<Actor> {
+    return this.http.post(URL, actor) as Observable<Actor>;
+  }
+
+  // delete(id: number) method
+  delete(id: number): Observable<any> {
+    return this.http.delete(URL + "/" + id);
+  }
+
+  // getById(id: number) method
+  getById(id: number): Observable<Actor> {
+    return this.http.get(URL + "/" + id) as Observable<Actor>;
+  }
+
+  // edit(actor: Actor) method
+  edit(actor: Actor): Observable<Actor> {
+    return this.http.put(URL + '/' + actor.id, actor) as Observable<Actor>;
+  }
+
 }

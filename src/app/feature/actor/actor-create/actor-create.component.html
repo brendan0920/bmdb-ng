@@ -2,12 +2,6 @@
     <h4>{{ title }}</h4>
     <table>
         <tr>
-            <td>Id:</td>
-            <td>
-                <input [(ngModel)]="newActor.id" type="text" />
-            </td>
-        </tr>
-        <tr>
             <td>First Name:</td>
             <td>
                 <input [(ngModel)]="newActor.firstName" type="text" />
@@ -21,14 +15,14 @@
         </tr>
         <tr>
             <td>Gender:</td>
-            <td>
-                <input [(ngModel)]="newActor.gender" type="text" />
-            </td>
+            <td> <select [(ngModel)]="newActor.gender" class="rounded">
+                    <option *ngFor="let gender of genders" [ngValue]="gender"> {{ gender }} </option>
+                </select> </td>
         </tr>
         <tr>
             <td>BirthDate: </td>
             <td>
-                <input [(ngModel)]="newActor.birthDate" type="text" />
+                <input [(ngModel)]="newActor.birthdate" type="date" />
             </td>
         </tr>
     </table>

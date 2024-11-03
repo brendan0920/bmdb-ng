@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Movie } from '../../../model/movie';
+import { MovieService } from '../../../service/movie.service';
+import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -7,19 +10,38 @@ import { Movie } from '../../../model/movie';
   templateUrl: './movie-create.component.html',
   styleUrl: './movie-create.component.css'
 })
-export class MovieCreateComponent {
+export class MovieCreateComponent implements OnInit, OnDestroy {
   title: string = "Movie Create";
   newMovie: Movie = new Movie();
+  subscription!: Subscription;
+  ratings: string[] = ["G", "PG", "PG13", "R", "NC-13"];
 
-  movies: Movie[] = [];
+  constructor(private movieSvc: MovieService, private router: Router) { }
+
+  ngOnInit(): void {
+
+  }
 
   addMovie() {
-    this.movies.push(this.newMovie);
-    console.log("Movie Added!");
-    console.log("Movies List:");
-    for (let m of this.movies) {
-      console.log(m.details());
-    }
-    this.newMovie = new Movie();
+    // this.movies.push(this.newMovie);
+    // console.log("Movie Added!");
+    // console.log("Movies List:");
+    // for (let m of this.movies) {
+    //   console.log(m.details());
+    // }
+    // this.newMovie = new Movie();
+    // console.log("Add Movie", this.newMovie);
+
+    // call movieSvc.add method.
+    this.subscription = this.movieSvc.add(this.newMovie).subscribe(
+      (resp) => {
+        // redirect to movie-list component
+        this.router.navigateByUrl("/movie-list");
+      }
+    );
+  }
+
+  ngOnDestroy(): void {
+    this.subscription?.unsubscribe();
   }
 }

@@ -13,6 +13,11 @@ import { ActorListComponent } from './feature/actor/actor-list/actor-list.compon
 import { CreditListComponent } from './feature/credit/credit-list/credit-list.component';
 import { provideHttpClient } from '@angular/common/http';
 import { CreditCreateComponent } from './feature/credit/credit-create/credit-create.component';
+import { MovieEditComponent } from './feature/movie/movie-edit/movie-edit.component';
+import { ActorEditComponent } from './feature/actor/actor-edit/actor-edit.component';
+import { CreditEditComponent } from './feature/credit/credit-edit/credit-edit.component';
+import { ActorDetailComponent } from './feature/actor/actor-detail/actor-detail.component';
+import { MovieDetailComponent } from './feature/movie/movie-detail/movie-detail.component';
 
 
 @NgModule({
@@ -25,7 +30,12 @@ import { CreditCreateComponent } from './feature/credit/credit-create/credit-cre
     ActorListComponent,
     CreditListComponent,
     ActorCreateComponent,
-    CreditCreateComponent
+    CreditCreateComponent,
+    MovieEditComponent,
+    ActorEditComponent,
+    CreditEditComponent,
+    ActorDetailComponent,
+    MovieDetailComponent
   ],
   imports: [
     BrowserModule,
