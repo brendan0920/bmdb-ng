@@ -33,15 +33,15 @@ export class ActorDetailComponent implements OnInit, OnDestroy {
   }
 
   delete() {
-    this.actorSvc.delete(this.actorId).subscribe(
-      resp => {
+    this.subscription = this.actorSvc.delete(this.actorId).subscribe({
+      next: (resp) => {
         this.actor = resp as Actor;
         this.router.navigateByUrl('/actor-list');
       },
-      err => {
+      error: (err) => {
         console.log(err);
-      }
-    );
+      },
+    });
   }
 
   ngOnDestroy(): void {

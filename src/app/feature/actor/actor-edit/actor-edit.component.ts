@@ -36,13 +36,13 @@ export class ActorEditComponent implements OnInit, OnDestroy {
   }
 
   save() {
-    this.actorSvc.edit(this.actor).subscribe(
-      resp => {
+    this.subscription = this.actorSvc.edit(this.actor).subscribe({
+      next: (resp) => {
         this.actor = resp as Actor;
         this.router.navigateByUrl("/actor-list");
       },
-      err => { console.log(err); }
-    );
+      error: (err) => { console.log(err); }
+    });
   }
 
   ngOnDestroy(): void {

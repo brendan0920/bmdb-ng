@@ -18,6 +18,10 @@ import { ActorEditComponent } from './feature/actor/actor-edit/actor-edit.compon
 import { CreditEditComponent } from './feature/credit/credit-edit/credit-edit.component';
 import { ActorDetailComponent } from './feature/actor/actor-detail/actor-detail.component';
 import { MovieDetailComponent } from './feature/movie/movie-detail/movie-detail.component';
+import { CreditDetailComponent } from './feature/credit/credit-detail/credit-detail.component';
+import { UserLoginComponent } from './feature/user/user-login/user-login.component';
+import { MovieCreditComponent } from './feature/movie/movie-credit/movie-credit.component';
+import { SortPipe } from './pipe/sort.pipe';
 
 
 @NgModule({
@@ -35,7 +39,11 @@ import { MovieDetailComponent } from './feature/movie/movie-detail/movie-detail.
     ActorEditComponent,
     CreditEditComponent,
     ActorDetailComponent,
-    MovieDetailComponent
+    MovieDetailComponent,
+    CreditDetailComponent,
+    UserLoginComponent,
+    MovieCreditComponent,
+    SortPipe
   ],
   imports: [
     BrowserModule,

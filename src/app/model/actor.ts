@@ -14,8 +14,4 @@ export class Actor {
         this.birthdate = birthdate;
     }
 
-    // details(): string {
-    //     return `Actor: id ${this.id}, ${this.firstName} (${this.lastName}), gender: ${this.gender}, birthdate: ${this.birthDate}`;
-    //     // ${this.birthDate.toISOString().split('T')[0]}
-    // }
 }

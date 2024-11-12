@@ -1,22 +1,23 @@
+<app-menu></app-menu>
 <div class="p-4">
     <h4>{{ title }}</h4>
     <table>
         <tr>
-            <td>Id:</td>
-            <td>
-                <input [(ngModel)]="newCredit.id" type="text" />
+            <td>Movie:</td>
+            <td> <select [(ngModel)]="newCredit.movie" class="rounded">
+                    <option *ngFor="let m of movies" [ngValue]="m">
+                        {{ m.title }}
+                    </option>
+                </select>
             </td>
         </tr>
         <tr>
-            <td>Movie Id:</td>
-            <td>
-                <input [(ngModel)]="newCredit.movie" type="text" />
-            </td>
-        </tr>
-        <tr>
-            <td>Actor Id:</td>
-            <td>
-                <input [(ngModel)]="newCredit.actor" type="text" />
+            <td>Actor:</td>
+            <td> <select [(ngModel)]="newCredit.actor" class="rounded">
+                    <option *ngFor="let a of actors" [ngValue]="a">
+                        {{ a.firstName + " " + a.lastName }}
+                    </option>
+                </select>
             </td>
         </tr>
         <tr>

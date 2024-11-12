@@ -33,15 +33,15 @@ export class MovieDetailComponent implements OnInit, OnDestroy {
   }
 
   delete() {
-    this.movieSvc.delete(this.movieId).subscribe(
-      resp => {
+    this.subscription = this.movieSvc.delete(this.movieId).subscribe({
+      next: (resp) => {
         this.movie = resp as Movie;
         this.router.navigateByUrl('/movie-list');
       },
-      err => {
+      error: (err) => {
         console.log(err);
-      }
-    );
+      },
+    });
   }
 
   ngOnDestroy(): void {

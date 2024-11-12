@@ -11,6 +11,11 @@ import { MovieEditComponent } from './feature/movie/movie-edit/movie-edit.compon
 import { ActorEditComponent } from './feature/actor/actor-edit/actor-edit.component';
 import { MovieDetailComponent } from './feature/movie/movie-detail/movie-detail.component';
 import { ActorDetailComponent } from './feature/actor/actor-detail/actor-detail.component';
+import { CreditEditComponent } from './feature/credit/credit-edit/credit-edit.component';
+import { CreditDetailComponent } from './feature/credit/credit-detail/credit-detail.component';
+import { UserLogin } from './model/user-login';
+import { UserLoginComponent } from './feature/user/user-login/user-login.component';
+import { MovieCreditComponent } from './feature/movie/movie-credit/movie-credit.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/movie-list', pathMatch: 'full' },
@@ -18,12 +23,16 @@ const routes: Routes = [
   { path: 'movie-create', component: MovieCreateComponent },
   { path: 'movie-detail/:id', component: MovieDetailComponent },
   { path: 'movie-edit/:id', component: MovieEditComponent },
+  { path: 'movie-credit/:movieId', component: MovieCreditComponent },
   { path: 'actor-list', component: ActorListComponent },
   { path: 'actor-create', component: ActorCreateComponent },
   { path: 'actor-detail/:id', component: ActorDetailComponent },
   { path: 'actor-edit/:id', component: ActorEditComponent },
   { path: 'credit-list', component: CreditListComponent },
   { path: 'credit-create', component: CreditCreateComponent },
+  { path: 'credit-detail/:id', component: CreditDetailComponent },
+  { path: 'credit-edit/:id', component: CreditEditComponent },
+  { path: 'user-login', component: UserLoginComponent },
   { path: '**', component: NotFoundComponent }
 ];
 

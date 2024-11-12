@@ -1,0 +1,47 @@
+<app-menu></app-menu>
+<!-- 
+title
+display the Movie Summary - title / year
+display the Credits:
+ - in a table row
+    - actor lname, fname
+    - role
+-->
+<div class="p-4">
+    <span class="component-title">
+        <h4>{{ title }}</h4>
+    </span>
+    <div *ngIf="movie">
+        <table *ngIf="movie" class="table table-sm table-striped">
+            <thead>
+                <th>Title (Year)</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ movie.title }} {{ movie.year }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <section class="heading">
+        <span class="page-title font-weight-bold font-italic">
+            Movie Credits
+        </span>
+    </section>
+    <div *ngIf="credits">
+        <table class="table table-sm table-striped">
+            <thead>
+                <tr>
+                    <th>Actor</th>
+                    <th>Role</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let credit of credits">
+                    <td>{{ credit.actor.lastName}}, {{ credit.actor.firstName }}</td>
+                    <td>{{ credit.role }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

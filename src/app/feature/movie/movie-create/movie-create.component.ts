@@ -23,15 +23,6 @@ export class MovieCreateComponent implements OnInit, OnDestroy {
   }
 
   addMovie() {
-    // this.movies.push(this.newMovie);
-    // console.log("Movie Added!");
-    // console.log("Movies List:");
-    // for (let m of this.movies) {
-    //   console.log(m.details());
-    // }
-    // this.newMovie = new Movie();
-    // console.log("Add Movie", this.newMovie);
-
     // call movieSvc.add method.
     this.subscription = this.movieSvc.add(this.newMovie).subscribe(
       (resp) => {

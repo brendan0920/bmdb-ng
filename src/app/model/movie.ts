@@ -13,7 +13,4 @@ export class Movie {
         this.director = director;
     }
 
-    details(): string {
-        return `Movie: id ${this.id}, ${this.title} (${this.year}), rated ${this.rating}, directed by: ${this.director}`;
-    }
 }
